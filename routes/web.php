@@ -67,5 +67,5 @@ Route::put('/profile', [AuthController::class, 'updateProfile'])
     ->name('profile.update');
 
 // Member Registration
-Route::get('/members', [MemberController::class, 'create']); // Show the member form
-Route::post('/members', [MemberController::class, 'store'])->name('members.store'); // Save the form
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('auth.register'); // Show the member form
+Route::post('/register', [AuthController::class, 'store'])->name('register.store'); // Save the form

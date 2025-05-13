@@ -54,8 +54,14 @@
                         <h2>⛪ Join Our Church Community</h2>
                         <p class="text-muted">Create an account to be part of our church's digital family</p>
                     </div>
+
+                    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
                     
-                    <form method="POST" action="{{ route('register.submit') }}">
+                    <form method="POST" action="{{ route('register.store') }}">
                         @csrf
                         
                         <div class="mb-3">
