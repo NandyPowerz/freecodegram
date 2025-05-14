@@ -29,7 +29,7 @@ class AuthController extends Controller
     * @param  \Illuminate\Http\Request  $request
     * @return \Illuminate\Http\RedirectResponse
     */
-   public function register(Request $request)
+   public function store(Request $request)
    {
        // Validate form data
        $validator = Validator::make($request->all(), [
@@ -55,7 +55,7 @@ class AuthController extends Controller
        Auth::login($user);
 
        // Redirect to dashboard
-       return redirect()->route('dashboard')->with('success', 'Welcome to Universal Church! Your account has been created successfully.');
+       return redirect()->route('auth.register')->with('success', '🎉 Registration successful! You are now a member of Universal Church.');
    }
 
    /**
